@@ -3,11 +3,22 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 class DishDetail extends Component {
 
-    constructor(props) {
-        super(props);
+    componentDidMount() {
+        console.log('Dishdetail Component componentDidMount is invoked');
+    }
+
+    // constructor(props) {
+    //     super(props);
+    // }
+
+    componentDidUpdate() {
+        console.log('Dishdetail Component componentDidUpdate is invoked');
     }
 
     renderDish(dish) {
+
+        console.log('Dishdetail Component render is invoked');
+
         if (dish != null) {
             return(
                 <Card>
