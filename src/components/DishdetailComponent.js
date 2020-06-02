@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentForm';
 // class DishDetail extends Component {
 
 //     componentDidMount() {
@@ -55,6 +56,7 @@ import { Link } from 'react-router-dom';
                         {commens}
                     </ul>
                 </div>
+                <CommentForm />
             </div>
         );
     } 
