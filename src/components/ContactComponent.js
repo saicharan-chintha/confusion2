@@ -47,6 +47,7 @@ class Contact extends Component {
     handleBlur = (field) => (evt) => {
         this.setState({
             touched : { ...this.state.touched, [field] : true}
+            // We can also use [evt.target.name] : true
         })
     }
 
@@ -103,7 +104,7 @@ class Contact extends Component {
                         <div className="col-12">
                             <h3>Contact Us</h3>
                         </div>
-                    </div>
+                </div>
                 <div className="row row-content">
                     <div className="col-12">
                     <h3>Location Information</h3>
