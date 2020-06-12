@@ -3,6 +3,8 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrum
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
 import  { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
+
 // class DishDetail extends Component {
 
 //     componentDidMount() {
@@ -22,7 +24,7 @@ import  { Loading } from './LoadingComponent';
         return(
             <div className="col-12 col-md-5 m-1">
                 <Card>
-                    <CardImg top src={dish.image} alt={dish.name} />
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                     <CardBody>
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
@@ -32,7 +34,7 @@ import  { Loading } from './LoadingComponent';
         );
     }
 
-    function RenderComments({comments, addComment, dishId}) {
+    function RenderComments({comments, postComment, dishId}) {
 
         const commens = comments.map((comment) => {
             return (
@@ -57,7 +59,7 @@ import  { Loading } from './LoadingComponent';
                         {commens}
                     </ul>
                 </div>
-                <CommentForm dishId={dishId} addComment={addComment} />
+                <CommentForm dishId={dishId} postComment={postComment} />
             </div>
         );
     } 
@@ -96,7 +98,7 @@ import  { Loading } from './LoadingComponent';
                     <div className="row">
                         <RenderDish dish={props.dish}/>
                         <RenderComments comments={props.comments}
-                            addComment={props.addComment}
+                            postComment={props.postComment}
                             dishId={props.dish.id}
                         />
                     </div>
